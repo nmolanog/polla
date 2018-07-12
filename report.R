@@ -13,8 +13,9 @@ list.files()%>%str_subset(".RData")
 load("scores.RData")
 load("scores_s2.RData")
 load("scores_s3.RData")
+load("scores_s4.RData")
 
-list(scores,scores_s2,scores_s3)%>%reduce(full_join)->z0
+list(scores,scores_s2,scores_s3,score_s4)%>%reduce(full_join)->z0
 z0$total<-apply(z0[,2:4],1,sum,na.rm=T)
 z0
 
